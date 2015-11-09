@@ -1,0 +1,10 @@
+PODS:
+  - JTMaterialTransition (1.0.5)
+
+DEPENDENCIES:
+  - JTMaterialTransition (~> 1.0.5)
+
+SPEC CHECKSUMS:
+  JTMaterialTransition: 7b2a19927baa47e42312df941cbc5132dc4484ca
+
+COCOAPODS: 0.39.0

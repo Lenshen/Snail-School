@@ -16,6 +16,11 @@
 		510AF38E1BEDE5B4009E3555 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 510AF3861BEDE5B4009E3555 /* AppDelegate.m */; settings = {ASSET_TAGS = (); }; };
 		510AF38F1BEDE5B4009E3555 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 510AF3881BEDE5B4009E3555 /* ViewController.m */; settings = {ASSET_TAGS = (); }; };
 		510AF3921BEDED2D009E3555 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 510AF3911BEDED2D009E3555 /* HomeViewController.m */; settings = {ASSET_TAGS = (); }; };
+		5154E75F1BF0928D0030E468 /* TriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5154E75E1BF0928D0030E468 /* TriendViewController.m */; settings = {ASSET_TAGS = (); }; };
+		51A0D76C1BF0438A0035269A /* HomeSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A0D76B1BF0438A0035269A /* HomeSearchViewController.m */; settings = {ASSET_TAGS = (); }; };
+		51A0D7721BF051830035269A /* HomeSearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A0D7711BF051830035269A /* HomeSearchTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		51A0D7751BF087140035269A /* HomePreparationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A0D7741BF087140035269A /* HomePreparationViewController.m */; settings = {ASSET_TAGS = (); }; };
+		EE1D3444111C52F6CD82E534 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE31C8F1752611EAAB63AE27 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +59,17 @@
 		510AF3881BEDE5B4009E3555 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		510AF3901BEDED2D009E3555 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		510AF3911BEDED2D009E3555 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		5154E75D1BF0928D0030E468 /* TriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TriendViewController.h; path = TableViewAndCell/TriendViewController.h; sourceTree = "<group>"; };
+		5154E75E1BF0928D0030E468 /* TriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TriendViewController.m; path = TableViewAndCell/TriendViewController.m; sourceTree = "<group>"; };
+		51A0D76A1BF0438A0035269A /* HomeSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeSearchViewController.h; sourceTree = "<group>"; };
+		51A0D76B1BF0438A0035269A /* HomeSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeSearchViewController.m; sourceTree = "<group>"; };
+		51A0D7701BF051830035269A /* HomeSearchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeSearchTableViewCell.h; path = ../HomeSearchTableViewCell.h; sourceTree = "<group>"; };
+		51A0D7711BF051830035269A /* HomeSearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeSearchTableViewCell.m; path = ../HomeSearchTableViewCell.m; sourceTree = "<group>"; };
+		51A0D7731BF087140035269A /* HomePreparationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePreparationViewController.h; sourceTree = "<group>"; };
+		51A0D7741BF087140035269A /* HomePreparationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePreparationViewController.m; sourceTree = "<group>"; };
+		80066864C1B75B82006ECD06 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		AE31C8F1752611EAAB63AE27 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8073B408D0B7FDE3D70C191 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE1D3444111C52F6CD82E534 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +105,8 @@
 				510AF3571BEDE55F009E3555 /* Snail SchoolTests */,
 				510AF3621BEDE55F009E3555 /* Snail SchoolUITests */,
 				510AF33C1BEDE55E009E3555 /* Products */,
+				54BB8BA3F78B8D50D2DED5D0 /* Pods */,
+				E2006106945DE6146CCAF025 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -180,8 +199,12 @@
 		510AF3751BEDE5B4009E3555 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				51A0D76A1BF0438A0035269A /* HomeSearchViewController.h */,
+				51A0D76B1BF0438A0035269A /* HomeSearchViewController.m */,
 				510AF3901BEDED2D009E3555 /* HomeViewController.h */,
 				510AF3911BEDED2D009E3555 /* HomeViewController.m */,
+				51A0D7731BF087140035269A /* HomePreparationViewController.h */,
+				51A0D7741BF087140035269A /* HomePreparationViewController.m */,
 				510AF3771BEDE5B4009E3555 /* TableViewAndCell */,
 			);
 			path = ViewController;
@@ -190,6 +213,8 @@
 		510AF3771BEDE5B4009E3555 /* TableViewAndCell */ = {
 			isa = PBXGroup;
 			children = (
+				51A0D7701BF051830035269A /* HomeSearchTableViewCell.h */,
+				51A0D7711BF051830035269A /* HomeSearchTableViewCell.m */,
 			);
 			path = TableViewAndCell;
 			sourceTree = "<group>";
@@ -317,6 +342,8 @@
 		510AF38C1BEDE5B4009E3555 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				5154E75D1BF0928D0030E468 /* TriendViewController.h */,
+				5154E75E1BF0928D0030E468 /* TriendViewController.m */,
 				510AF38D1BEDE5B4009E3555 /* TableViewAndCell */,
 			);
 			path = ViewController;
@@ -329,6 +356,23 @@
 			path = TableViewAndCell;
 			sourceTree = "<group>";
 		};
+		54BB8BA3F78B8D50D2DED5D0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E8073B408D0B7FDE3D70C191 /* Pods.debug.xcconfig */,
+				80066864C1B75B82006ECD06 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E2006106945DE6146CCAF025 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AE31C8F1752611EAAB63AE27 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -336,9 +380,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 510AF3681BEDE55F009E3555 /* Build configuration list for PBXNativeTarget "Snail School" */;
 			buildPhases = (
+				6B65154B03AAFA958EB6A7E6 /* Check Pods Manifest.lock */,
 				510AF3371BEDE55E009E3555 /* Sources */,
 				510AF3381BEDE55E009E3555 /* Frameworks */,
 				510AF3391BEDE55E009E3555 /* Resources */,
+				88CD0CA1F3FE875E1781E0F2 /* Embed Pods Frameworks */,
+				EE9C7CD08B71710306794F2C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -454,6 +501,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6B65154B03AAFA958EB6A7E6 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		88CD0CA1F3FE875E1781E0F2 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE9C7CD08B71710306794F2C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		510AF3371BEDE55E009E3555 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -461,8 +556,12 @@
 			files = (
 				510AF38F1BEDE5B4009E3555 /* ViewController.m in Sources */,
 				510AF38E1BEDE5B4009E3555 /* AppDelegate.m in Sources */,
+				51A0D7751BF087140035269A /* HomePreparationViewController.m in Sources */,
 				510AF3401BEDE55E009E3555 /* main.m in Sources */,
 				510AF3921BEDED2D009E3555 /* HomeViewController.m in Sources */,
+				51A0D7721BF051830035269A /* HomeSearchTableViewCell.m in Sources */,
+				5154E75F1BF0928D0030E468 /* TriendViewController.m in Sources */,
+				51A0D76C1BF0438A0035269A /* HomeSearchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,6 +698,7 @@
 		};
 		510AF3691BEDE55F009E3555 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8073B408D0B7FDE3D70C191 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Snail School/Info.plist";
@@ -610,6 +710,7 @@
 		};
 		510AF36A1BEDE55F009E3555 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80066864C1B75B82006ECD06 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Snail School/Info.plist";
@@ -686,6 +787,7 @@
 				510AF36A1BEDE55F009E3555 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		510AF36B1BEDE55F009E3555 /* Build configuration list for PBXNativeTarget "Snail SchoolTests" */ = {
 			isa = XCConfigurationList;
@@ -694,6 +796,7 @@
 				510AF36D1BEDE55F009E3555 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		510AF36E1BEDE55F009E3555 /* Build configuration list for PBXNativeTarget "Snail SchoolUITests" */ = {
 			isa = XCConfigurationList;
@@ -702,6 +805,7 @@
 				510AF3701BEDE55F009E3555 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

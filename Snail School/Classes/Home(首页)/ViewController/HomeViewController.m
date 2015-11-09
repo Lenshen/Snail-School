@@ -9,7 +9,7 @@
 #import "HomeViewController.h"
 #define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
 #define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
-@interface HomeViewController ()
+@interface HomeViewController ()<UITabBarControllerDelegate>
 
 @end
 
@@ -19,8 +19,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self setNavigationController];
-    
+    self.tabBarItem.enabled = NO;
+
 }
+
 
 
 //设置naviGationController的一些
@@ -33,7 +35,6 @@
     self.navigationItem.backBarButtonItem = backItem;
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationController.navigationBar.translucent = NO;
-    self.navigationController.navigationBar.frame = CGRectMake(0, 20, SCREEN_WIDTH, 100);
 
 }
 
