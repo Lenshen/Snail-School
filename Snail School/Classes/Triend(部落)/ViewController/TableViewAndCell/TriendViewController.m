@@ -7,8 +7,10 @@
 //
 
 #import "TriendViewController.h"
+#import "HuaTiTableViewCell.h"
 
-@interface TriendViewController ()
+@interface TriendViewController ()<UITableViewDelegate,UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -17,11 +19,38 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
+    return 4;
+    
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    
+    return 1;
+    
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    HuaTiTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"huaticell" forIndexPath:indexPath];
+    cell.huatiImage.backgroundColor = [UIColor greenColor];
+    
+
+    return cell;
+}
+
+
+-(CGFloat )tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 20;
 }
 
 /*

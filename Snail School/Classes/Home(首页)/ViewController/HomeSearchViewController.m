@@ -53,6 +53,23 @@
     }
    
 }
+-(CGFloat )tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (iPhone4) {
+        return 73;
+    }
+    else if (iPhone5) {
+        return 73;
+    }else if(iPhone6)
+    {
+        return 85;
+    }else
+    {
+        return 100;
+    
+    }
+    
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
