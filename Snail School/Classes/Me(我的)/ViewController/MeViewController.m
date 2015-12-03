@@ -22,6 +22,7 @@
     self.tableview.delegate = self;
     self.tableview.dataSource = self;
     self.tableview.scrollEnabled = NO;
+
 }
 
 - (void)didReceiveMemoryWarning {

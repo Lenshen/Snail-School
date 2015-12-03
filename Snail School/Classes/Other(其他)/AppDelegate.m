@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "XQNewFeatureVC.h"
+#import "HomeViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,7 +19,38 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+//    [self newFeature];
+
     return YES;
+}
+-(void)newFeature
+{
+    NSString *version =[NSKeyedUnarchiver unarchiveObjectWithFile:[[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"version.data"]];
+    // app当前版本
+    NSDictionary *infoDict = [[NSBundle mainBundle] infoDictionary];
+    NSString *currentVersion = [infoDict objectForKey:@"CFBundleShortVersionString"];
+    
+    if ([currentVersion isEqualToString:version]) {
+        
+        self.window.rootViewController = [[HomeViewController alloc] init];
+    }else{
+        
+        XQNewFeatureVC *newVc = [[XQNewFeatureVC alloc] initWithFeatureImagesNameArray:@[@"1",@"2",@"3",@"4"]];
+     
+        newVc.pageIndicatorTintColor = [UIColor clearColor];
+        self.window.rootViewController = newVc;
+        newVc.completeBlock = ^{
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            UITabBarController *tab = [storyboard instantiateViewControllerWithIdentifier:@"tab"];
+            self.window.rootViewController = tab;
+            
+
+        };
+        
+        [self.window makeKeyAndVisible];
+
+    }
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

@@ -35,13 +35,13 @@
     // Do any additional setup after loading the view.
     HomeSearchTableView.dataSource = self;
     HomeSearchTableView.delegate = self;
+    self.navigationController.navigationBar.hidden = NO;
+
     [self initArray];
 
-
-    
-
-
 }
+
+
 -(void)initArray
 {
     if (!self.LabelTitleArray) {

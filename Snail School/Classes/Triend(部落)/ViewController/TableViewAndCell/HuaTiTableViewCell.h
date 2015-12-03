@@ -10,5 +10,6 @@
 
 @interface HuaTiTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *huatiImage;
+@property (weak, nonatomic) IBOutlet UILabel *huatiDesLabel;
 
 @end
