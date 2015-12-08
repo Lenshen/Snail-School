@@ -1,18 +1,18 @@
 PODS:
-  - AFNetworking (3.0.0-beta.2):
-    - AFNetworking/NSURLSession (= 3.0.0-beta.2)
-    - AFNetworking/Reachability (= 3.0.0-beta.2)
-    - AFNetworking/Security (= 3.0.0-beta.2)
-    - AFNetworking/Serialization (= 3.0.0-beta.2)
-    - AFNetworking/UIKit (= 3.0.0-beta.2)
-  - AFNetworking/NSURLSession (3.0.0-beta.2):
+  - AFNetworking (3.0.0-beta.3):
+    - AFNetworking/NSURLSession (= 3.0.0-beta.3)
+    - AFNetworking/Reachability (= 3.0.0-beta.3)
+    - AFNetworking/Security (= 3.0.0-beta.3)
+    - AFNetworking/Serialization (= 3.0.0-beta.3)
+    - AFNetworking/UIKit (= 3.0.0-beta.3)
+  - AFNetworking/NSURLSession (3.0.0-beta.3):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.0.0-beta.2)
-  - AFNetworking/Security (3.0.0-beta.2)
-  - AFNetworking/Serialization (3.0.0-beta.2)
-  - AFNetworking/UIKit (3.0.0-beta.2):
+  - AFNetworking/Reachability (3.0.0-beta.3)
+  - AFNetworking/Security (3.0.0-beta.3)
+  - AFNetworking/Serialization (3.0.0-beta.3)
+  - AFNetworking/UIKit (3.0.0-beta.3):
     - AFNetworking/NSURLSession
   - JSONModel (1.1.2)
   - JTMaterialTransition (1.0.5)
@@ -23,6 +23,7 @@ PODS:
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
+  - SMS_SDK (1.1.1)
   - SVProgressHUD (1.1.3)
   - YLGIFImage (0.11)
 
@@ -31,13 +32,15 @@ DEPENDENCIES:
   - JSONModel (~> 1.1.2)
   - JTMaterialTransition (~> 1.0.5)
   - MJPhotoBrowser (~> 1.0.2)
+  - SMS_SDK (~> 1.1.1)
 
 SPEC CHECKSUMS:
-  AFNetworking: e3639f8310904c9888ddf03a2fa585633594a6e3
+  AFNetworking: 4bbf9c2993fe416e02093128f3be1bfe20c6e847
   JSONModel: 216584d0311b053ff714f1d6cb700dbf890847bc
   JTMaterialTransition: 7b2a19927baa47e42312df941cbc5132dc4484ca
   MJPhotoBrowser: f55e8490231f44a78ca6455105a1c798a142c95f
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
+  SMS_SDK: 904effe1239a6d2677586adf5063cdf0a0024186
   SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
   YLGIFImage: c0ae132fe80e5282b2762a97d14e23ba71a748ae
 

@@ -19,10 +19,15 @@
 +(void)huatiDataWithUrl:(NSString *)urlString
                success:(void(^)(id homeData))success
                   fail:(void(^)())fail;
++(void)homeDataWithUrl:(NSArray *)urlString
 
+             mutoArray:(NSMutableArray *)imageArray;
 +(void)homeDataWithUrl:(NSString *)urlString
                  Image:(UIImageView *)image
                 button:(UIButton *)button
 ;
++(void)homeDataWithjsonModel:(NSArray *)jsonModelImg
+                   imageView:(UIImageView *)cellImageView
+                  Scrollview:(UIScrollView *)scrollview;
 +(UIImage *)imageWithJsonString:(NSString *)jsonString;
 @end

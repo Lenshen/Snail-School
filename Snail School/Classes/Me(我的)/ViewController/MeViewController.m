@@ -48,15 +48,24 @@
     MeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MeCell" forIndexPath:indexPath];
     if (indexPath.section == 0 &&indexPath.row == 0) {
         cell.MeCellLabel.text = @"我的话题";
+        cell.MeCellImage.image = [UIImage imageNamed:@"own1"];
     }else if (indexPath.section == 1 &&indexPath.row == 0) {
         cell.MeCellLabel.text = @"我的二手";
+        cell.MeCellImage.image = [UIImage imageNamed:@"own2"];
+
     }else if (indexPath.section == 1 &&indexPath.row == 1) {
         cell.MeCellLabel.text = @"我的收藏";
+        cell.MeCellImage.image = [UIImage imageNamed:@"own3"];
+
     }else if (indexPath.section == 1 &&indexPath.row == 2) {
         cell.MeCellLabel.text = @"我的评价";
+        cell.MeCellImage.image = [UIImage imageNamed:@"own4"];
+
     }else
     {
         cell.MeCellLabel.text = @"设置";
+        cell.MeCellImage.image = [UIImage imageNamed:@"own5"];
+
     }
     
     

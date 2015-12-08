@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "XQNewFeatureVC.h"
 #import "HomeViewController.h"
+#import <SMS_SDK/SMSSDK.h>
 
 @interface AppDelegate ()
 
@@ -20,6 +21,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
 //    [self newFeature];
+    [SMSSDK registerApp:@"d09cb23fcfc2" withSecret:@"2be4cc276f5015d6f76c233b6c12db11"];
+    
 
     return YES;
 }

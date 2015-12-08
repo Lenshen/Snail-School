@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HomeModel.h"
 
 @interface GoodDetailViewController : UIViewController
+@property (nonatomic ,strong)HomeModel *jsonModel;
 
 @end

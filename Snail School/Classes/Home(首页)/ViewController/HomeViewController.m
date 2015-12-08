@@ -15,12 +15,15 @@
 #import "HomeModel.h"
 #import "HomeAPI.h"
 #import "homeManager.h"
+#import "GoodDetailViewController.h"
+#import "HomeTableViewCell.h"
 #define Kwidth [UIScreen mainScreen].bounds.size.width
 #define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
 #define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
 @interface HomeViewController ()<UITabBarControllerDelegate,UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentController;
+@property (weak, nonatomic) HomeTableViewCell *cell;
 @property (weak, nonatomic) IBOutlet UIView *hideSegment;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *SegmentHideController;
 @property (weak, nonatomic) IBOutlet UIScrollView *haibaoScrollView;
@@ -31,8 +34,9 @@
 @property (strong, nonatomic)NSArray *json;
 @property (strong, nonatomic)homeManager *homeManger;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activtyView;
-
-#define SecondHandTypeSaleUrl1 @"http://139.196.33.40/index.php/Good/getIndexGoods/begin/0/count/1/type/4"
+@property (weak, nonatomic)  UIScrollView *cellScrollView;
+@property (strong, nonatomic) UIImageView *cellImageView;
+#define SecondHandTypeSaleUrl1 @"http://139.196.33.40/index.php/Good/getIndexGoods/begin/0/count/1/type/1"
 
 
 @end
@@ -49,16 +53,17 @@
     self.homeManger = [[homeManager alloc]init];
         [self setTableViewDelegate];
 
-    [self baseReadData];
+    
+    self.cellImageView = [[UIImageView alloc]init];
+   
     
     
-    
-
     
     
     
 
 }
+
 -(void)baseReadData
 {
     [self.activtyView startAnimating];
@@ -66,7 +71,8 @@
     [HomeAPI homeDataWithUrl:SecondHandTypeSaleUrl1 success:^(id homeData) {
         self.jsonModel = homeData[0];
         [self.tableView reloadData];
-        NSLog(@"%@",self.jsonModel);
+
+       
         [self.activtyView stopAnimating];
         [self.activtyView setHidesWhenStopped:YES];
     } fail:^{
@@ -98,7 +104,8 @@
 {
     [super viewDidAppear:YES];
     [self setHaibaoScrollView];
-    
+    [self.tableView reloadData];
+
     
 
 }
@@ -111,7 +118,8 @@
     self.navigationController.navigationBar.hidden = YES;
     UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleDone target:nil action:nil];
     self.navigationItem.backBarButtonItem = barButtonItem;
-    
+    [self baseReadData];
+
     
 
 
@@ -123,7 +131,6 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     self.hideSegment.hidden = YES;
-    [self.tableView reloadData];
     [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(circulate:) userInfo:nil repeats:YES];
     [self.segmentController addTarget:self action:@selector(segmentControllerPressed:) forControlEvents:UIControlEventValueChanged];
     [self.SegmentHideController addTarget:self action:@selector(segmentControllerPressedhide:) forControlEvents:UIControlEventValueChanged];
@@ -179,6 +186,7 @@
 }
 
 //判断什么时候显示hideSegment
+
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     if (scrollView.contentOffset.y>=106) {
@@ -186,7 +194,6 @@
         
     }else
         self.hideSegment.hidden = YES;
-    NSLog(@"%f",scrollView.contentOffset.y);
 }
 
 //二手切换
@@ -244,77 +251,108 @@
 
 //  tableView 代理
 
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+//-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+//{
+//    return <#expression#>
+//}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 100;
     
 }
+
+#pragma mark 注册cell
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    HomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HomeCell" forIndexPath:indexPath];
+    self.cell = [tableView dequeueReusableCellWithIdentifier:@"HomeCell" forIndexPath:indexPath];
     
-    NSString *str = [NSString stringWithFormat:@"http://139.196.33.40/%@",self.jsonModel.trader_icon];
-    NSLog(@"%@",str);
-    NSString *dateString = @"2015-12-3 3:50:29";
+    NSString *str = [NSString stringWithFormat:@"http://139.196.33.40/%@",self.jsonModel.img[0]];
+    [HomeAPI homeDataWithUrl:str Image:nil button:_cell.HomeCellUseImage];
     
     
+    [HomeAPI homeDataWithjsonModel:self.jsonModel.img imageView:_cellImageView Scrollview:_cell.goodImageScrollView];
+    
+    _cell.HomeCellUseName.text = self.jsonModel.good_name;
+   
+    NSString *dateString = @"2015-12-3 18:50:29";
+
+    _cell.timeLabel.text = [self compareCurrentTime:dateString];
+    
+    NSString *formStr = [NSString stringWithFormat:@"来自.%@",self.jsonModel.trader_university];
+    
+    NSString *strInt = [NSString stringWithFormat:@"%d",self.jsonModel.good_comment];
+    _cell.goodComment.text = strInt;
+    _cell.formLabel.text = formStr;
+    _cell.goodDesLabel.text = self.jsonModel.good_desc;
+    _cell.goodImageScrollView.contentSize = CGSizeMake(_cell.goodImageScrollView.frame.size.width*self.jsonModel.img.count, _cell.goodImageScrollView.frame.size.height);
+    if (self.jsonModel.trader_isAuth == 0) {
+        _cell.vaildateImage.image = [UIImage imageNamed:@"已验证"];
+    }else
+    {
+        _cell.vaildateImage.image = [UIImage imageNamed:@"未验证"];
+    }
+    if (self.jsonModel.trader_sex == 0)
+    {
+        _cell.sexImage.image = [UIImage imageNamed:@"女生"];
+    }else
+    {
+        _cell.sexImage.image = [UIImage imageNamed:@"男生"];
+    }
+    if (self.jsonModel.img) {
+        [self cellScrollviewAddImage];
+    }
+    
+    return _cell;
+
+    
+}
+
+-(void)cellScrollviewAddImage
+{
+   
+            NSMutableArray *urlArray = [[NSMutableArray alloc]init];
+            UIImageView * image = [[UIImageView alloc]init];
+    
+            for(int i=0; i< self.jsonModel.img.count; i++)
+            {
+    
+                self.cellImageView  = [[UIImageView alloc] initWithFrame:CGRectMake(_cell.goodImageScrollView.frame.size.width*i,0,_cell.goodImageScrollView.frame.size.width,200)];
+    
+                [urlArray addObject:self.jsonModel.img[i]];
+                NSString *str = [NSString stringWithFormat:@"http://139.196.33.40/%@",self.jsonModel.img[i]];
+                [image sd_setImageWithURL:[NSURL URLWithString:str]completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                    self.cellImageView.image =image;
+                    [_cell.goodImageScrollView addSubview:self.cellImageView];
+
+    
+                }];
+            }
+    
+  
+    
+    
+
+
+}
+#pragma mark 时间转化
+
+-(NSString *) compareCurrentTime:(NSString *) compareDate
+{
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     
     
     [formatter setDateFormat:@"yyyy-MM-dd H:mm:ss"];
     
     
-    NSDate *date = [formatter dateFromString:dateString];
+    NSDate *date = [formatter dateFromString:compareDate];
     
-    
-  
-    [HomeAPI homeDataWithUrl:str Image:nil button:cell.HomeCellUseImage];
-   
-    
-    cell.HomeCellUseName.text = self.jsonModel.good_name;
-    if (self.jsonModel.trader_isAuth == 1) {
-        cell.vaildateImage.image = [UIImage imageNamed:@"已验证"];
-    }
-    if (self.jsonModel.trader_sex == 1)
-    {
-        cell.sexImage.image = [UIImage imageNamed:@"女生"];
-    }
-    cell.timeLabel.text = [self compareCurrentTime:date];
-    NSString *formStr = [NSString stringWithFormat:@"来自.%@",self.jsonModel.trader_university];
-    
-    cell.formLabel.text = formStr;
-    cell.goodDesLabel.text = self.jsonModel.good_desc;
-    cell.goodImageScrollView.contentSize = CGSizeMake(cell.goodImageScrollView.frame.size.width*self.jsonModel.img.count, cell.goodImageScrollView.frame.size.height);
-     NSMutableArray *urlArray = [[NSMutableArray alloc]init];
-    for(int i=0; i< self.jsonModel.img.count; i++) {
-        UIImageView *imageView  = [[UIImageView alloc] initWithFrame:CGRectMake(cell.goodImageScrollView.frame.size.width*i,0,cell.goodImageScrollView.frame.size.width,200)];
-        
-        NSLog(@"dddddddddd%@",self.jsonModel.img[1]);
-        
-        [urlArray addObject:self.jsonModel.img[i]];
-        UIImageView * image = [[UIImageView alloc]init];
-        NSString *str = [NSString stringWithFormat:@"http://139.196.33.40/%@",self.jsonModel.img[i]];
-        [image sd_setImageWithURL:[NSURL URLWithString:str] placeholderImage:[UIImage imageNamed:nil]];
-        
-
-        imageView.image = image.image;
-        
-        
-        
-        [cell.goodImageScrollView addSubview:imageView];
-    }
-
 
     
-  
-    return cell;
-    
-}
-
--(NSString *) compareCurrentTime:(NSDate *) compareDate
-{
-    
-    NSTimeInterval late = [compareDate timeIntervalSince1970]*1;
+    NSTimeInterval late = [date timeIntervalSince1970]*1;
     
     NSString * timeString = nil;
     
@@ -389,8 +427,13 @@
     return timeString;
 }
 
+#pragma mark  点击跳转
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    GoodDetailViewController *goodD =[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"GoodDetailViewController"];
+    goodD.jsonModel = self.jsonModel;
+    [self.navigationController pushViewController:goodD animated:YES];
 }
 
 

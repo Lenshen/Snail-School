@@ -14,34 +14,30 @@
 //@end
 
 @interface HomeimageModel : JSONModel
-@property (nonatomic, strong)NSString* image1;
 
 
 @end
 
 
 @interface HomeModel : JSONModel
-//typedef NS_ENUM(NSInteger,SecondHandType)
-//{
-//    SecondHandSaleType,
-//    SecondHandRentType,
-//    SecondHandBarterType,
-//};
+
 @property (assign, nonatomic) int good_id;
 @property (strong, nonatomic) NSString* good_name;
 @property (strong, nonatomic) NSString* good_desc;
 @property (strong, nonatomic) NSString* good_time;
+//@property (assign, nonatomic) float good_rent;
+//@property (assign, nonatomic) int good_prime_price;
 @property (strong, nonatomic) NSString* trader_icon;
 @property (assign, nonatomic) int trader_isAuth;
 @property (strong, nonatomic) NSString* trader_account;
 @property (strong, nonatomic) NSString* trader_university;
 @property (assign, nonatomic) int trader_sex;
+@property (assign, nonatomic) int good_comment;
+
 
 @property (strong, nonatomic) NSArray* img;
 
-//@property (assign, nonatomic) BOOL isInEurope;
 
-//@property (nonatomic,assign) NSInteger SecondHandType;
 
 +(HomeModel *)shareManger;
 

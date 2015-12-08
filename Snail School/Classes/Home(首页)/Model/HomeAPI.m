@@ -7,6 +7,8 @@
 //
 
 #import "HomeAPI.h"
+#import "MJPhotoBrowser.h"
+
 
 @implementation HomeAPI
 +(void)homeDataWithUrl:(NSString *)urlString
@@ -51,9 +53,10 @@
                 button:(UIButton *)button
 
 {
-    NSURL *url = [NSURL URLWithString:urlString];
     dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
     dispatch_async(queue, ^{
+        NSURL *url = [NSURL URLWithString:urlString];
+
         NSData *data = [NSData dataWithContentsOfURL:url];
         UIImage *img = [UIImage imageWithData:data];
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -61,6 +64,67 @@
         });
         
     });
+}
++(void)homeDataWithUrl:(NSArray *)urlString
+             mutoArray:(NSMutableArray *)imageArray
+
+{
+    NSMutableArray *array= [[NSMutableArray alloc]init];
+
+    for (int i = 0; i < urlString.count; i++) {
+        dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
+        dispatch_async(queue, ^{
+            NSURL *url = [[NSURL alloc]init];
+            NSString *str = [NSString stringWithFormat:@"http://139.196.33.40/%@",urlString[i]];
+            url  = [NSURL URLWithString:str];
+            NSData *data = [[NSData alloc]init];
+            data = [NSData dataWithContentsOfURL:url];
+            UIImage *img = [UIImage imageWithData:data];
+            dispatch_async(dispatch_get_main_queue(), ^{
+            });
+            [array addObject:img];
+            [imageArray addObject:array[0]];
+        });
+  
+    }
+    
+}
++(void)homeDataWithjsonModel:(NSArray *)jsonModelImg
+             imageView:(UIImageView *)cellImageView
+            Scrollview:(UIScrollView *)scrollview
+
+{
+
+
+    NSMutableArray *urlArray = [[NSMutableArray alloc]init];
+
+
+    dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
+    dispatch_async(queue, ^{
+        UIImageView *imgview = [[UIImageView alloc]init];
+
+        UIImageView *imgview2 = [[UIImageView alloc]init];
+        UIImage *image = [[UIImage alloc]init];
+
+    for(int i=0; i< jsonModelImg.count; i++)
+    {
+        NSString *str = [NSString stringWithFormat:@"http://139.196.33.40/%@",jsonModelImg[i]];
+        NSURL *url = [NSURL URLWithString:str];
+ 
+        [imgview sd_setImageWithURL:url];
+        [urlArray addObject:imgview];
+        cellImageView.frame = CGRectMake(scrollview.frame.size.width*i,0,scrollview.frame.size.width,200);
+        imgview2 = urlArray[i];
+        
+     
+    }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            cellImageView.image = imgview2.image;
+            [scrollview addSubview:imgview2];
+            
+        });
+   });
+
 }
 +(UIImage *)imageWithJsonString:(NSString *)jsonString
 {

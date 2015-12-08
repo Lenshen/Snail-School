@@ -20,6 +20,18 @@
 		5113D4661C0E91B4006D1E24 /* homeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5113D4651C0E91B4006D1E24 /* homeManager.m */; settings = {ASSET_TAGS = (); }; };
 		5154E75F1BF0928D0030E468 /* TriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5154E75E1BF0928D0030E468 /* TriendViewController.m */; settings = {ASSET_TAGS = (); }; };
 		51588D0E1C0BF1F700236C65 /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 51588D0D1C0BF1F700236C65 /* HomeModel.m */; settings = {ASSET_TAGS = (); }; };
+		515EA56B1C1553A30055C480 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 515EA56A1C1553A30055C480 /* Localizable.strings */; settings = {ASSET_TAGS = (); }; };
+		515EA59F1C156DAA0055C480 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 515EA58F1C156DAA0055C480 /* CustomCell.m */; settings = {ASSET_TAGS = (); }; };
+		515EA5A01C156DAA0055C480 /* InvitationViewControllerEx.m in Sources */ = {isa = PBXBuildFile; fileRef = 515EA5911C156DAA0055C480 /* InvitationViewControllerEx.m */; settings = {ASSET_TAGS = (); }; };
+		515EA5A11C156DAA0055C480 /* RegisterByVoiceCallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 515EA5941C156DAA0055C480 /* RegisterByVoiceCallViewController.m */; settings = {ASSET_TAGS = (); }; };
+		515EA5A21C156DAA0055C480 /* SubmitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 515EA5961C156DAA0055C480 /* SubmitViewController.m */; settings = {ASSET_TAGS = (); }; };
+		515EA5A31C156DAA0055C480 /* RegViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 515EA5981C156DAA0055C480 /* RegViewController.m */; settings = {ASSET_TAGS = (); }; };
+		515EA5A41C156DAA0055C480 /* SectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 515EA59A1C156DAA0055C480 /* SectionsViewController.m */; settings = {ASSET_TAGS = (); }; };
+		515EA5A51C156DAA0055C480 /* SectionsViewControllerFriends.m in Sources */ = {isa = PBXBuildFile; fileRef = 515EA59C1C156DAA0055C480 /* SectionsViewControllerFriends.m */; settings = {ASSET_TAGS = (); }; };
+		515EA5A61C156DAA0055C480 /* VerifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 515EA59E1C156DAA0055C480 /* VerifyViewController.m */; settings = {ASSET_TAGS = (); }; };
+		515EA5A81C1573B60055C480 /* button4.png in Resources */ = {isa = PBXBuildFile; fileRef = 515EA5A71C1573B60055C480 /* button4.png */; settings = {ASSET_TAGS = (); }; };
+		515EA5AB1C157A220055C480 /* SettingPassWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 515EA5AA1C157A220055C480 /* SettingPassWordViewController.m */; settings = {ASSET_TAGS = (); }; };
+		515EA5AE1C157BBA0055C480 /* SettingPWTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 515EA5AD1C157BBA0055C480 /* SettingPWTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		5163AB5F1BF18DC20040AFDC /* HSBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5163AB5E1BF18DC20040AFDC /* HSBViewController.m */; settings = {ASSET_TAGS = (); }; };
 		517BC04E1BFAF3C900262C45 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 517BC04D1BFAF3C900262C45 /* HomeTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		517BC0561BFAFE6200262C45 /* HTabelHDView.m in Sources */ = {isa = PBXBuildFile; fileRef = 517BC0551BFAFE6200262C45 /* HTabelHDView.m */; settings = {ASSET_TAGS = (); }; };
@@ -29,6 +41,8 @@
 		51A0D76C1BF0438A0035269A /* HomeSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A0D76B1BF0438A0035269A /* HomeSearchViewController.m */; settings = {ASSET_TAGS = (); }; };
 		51A0D7721BF051830035269A /* HomeSearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A0D7711BF051830035269A /* HomeSearchTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		51A0D7751BF087140035269A /* HomePreparationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A0D7741BF087140035269A /* HomePreparationViewController.m */; settings = {ASSET_TAGS = (); }; };
+		51B196781C169A2200E049E5 /* HuaiTiDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51B196771C169A2200E049E5 /* HuaiTiDetailTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		51B1967B1C169D7F00E049E5 /* HuaTiDetialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51B1967A1C169D7F00E049E5 /* HuaTiDetialViewController.m */; settings = {ASSET_TAGS = (); }; };
 		51B50B451BFB269E0027BE2A /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51B50B441BFB269E0027BE2A /* TabBarController.m */; settings = {ASSET_TAGS = (); }; };
 		51B50B4B1BFC0D150027BE2A /* XQNewFeatureVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 51B50B4A1BFC0D150027BE2A /* XQNewFeatureVC.m */; settings = {ASSET_TAGS = (); }; };
 		51B50B501BFC0D300027BE2A /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 51B50B4C1BFC0D300027BE2A /* 1.png */; settings = {ASSET_TAGS = (); }; };
@@ -36,6 +50,7 @@
 		51B50B521BFC0D300027BE2A /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 51B50B4E1BFC0D300027BE2A /* 3.png */; settings = {ASSET_TAGS = (); }; };
 		51B50B531BFC0D300027BE2A /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 51B50B4F1BFC0D300027BE2A /* 4.png */; settings = {ASSET_TAGS = (); }; };
 		51B50B561BFC0DD70027BE2A /* XQNewFeatureBaseVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 51B50B551BFC0DD70027BE2A /* XQNewFeatureBaseVc.m */; settings = {ASSET_TAGS = (); }; };
+		51BD2E081C154C79009C7E72 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51BD2E071C154C79009C7E72 /* RegisterViewController.m */; settings = {ASSET_TAGS = (); }; };
 		51D2D9BF1BFEB8DD009A6478 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D2D9BE1BFEB8DD009A6478 /* TableViewController.m */; settings = {ASSET_TAGS = (); }; };
 		51D2D9C21BFEBD9A009A6478 /* GoodDetailTableViewCellB.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D2D9C11BFEBD9A009A6478 /* GoodDetailTableViewCellB.m */; settings = {ASSET_TAGS = (); }; };
 		51D2D9C51BFEC246009A6478 /* GoodDetailTableViewCellS.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D2D9C41BFEC246009A6478 /* GoodDetailTableViewCellS.m */; settings = {ASSET_TAGS = (); }; };
@@ -89,6 +104,29 @@
 		5154E75E1BF0928D0030E468 /* TriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TriendViewController.m; path = TableViewAndCell/TriendViewController.m; sourceTree = "<group>"; };
 		51588D0C1C0BF1F700236C65 /* HomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeModel.h; sourceTree = "<group>"; };
 		51588D0D1C0BF1F700236C65 /* HomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeModel.m; sourceTree = "<group>"; };
+		515EA5681C1553A30055C480 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		515EA5691C1553A30055C480 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		515EA58E1C156DAA0055C480 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
+		515EA58F1C156DAA0055C480 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
+		515EA5901C156DAA0055C480 /* InvitationViewControllerEx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvitationViewControllerEx.h; sourceTree = "<group>"; };
+		515EA5911C156DAA0055C480 /* InvitationViewControllerEx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvitationViewControllerEx.m; sourceTree = "<group>"; };
+		515EA5931C156DAA0055C480 /* RegisterByVoiceCallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterByVoiceCallViewController.h; sourceTree = "<group>"; };
+		515EA5941C156DAA0055C480 /* RegisterByVoiceCallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterByVoiceCallViewController.m; sourceTree = "<group>"; };
+		515EA5951C156DAA0055C480 /* SubmitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmitViewController.h; sourceTree = "<group>"; };
+		515EA5961C156DAA0055C480 /* SubmitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmitViewController.m; sourceTree = "<group>"; };
+		515EA5971C156DAA0055C480 /* RegViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegViewController.h; sourceTree = "<group>"; };
+		515EA5981C156DAA0055C480 /* RegViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegViewController.m; sourceTree = "<group>"; };
+		515EA5991C156DAA0055C480 /* SectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionsViewController.h; sourceTree = "<group>"; };
+		515EA59A1C156DAA0055C480 /* SectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionsViewController.m; sourceTree = "<group>"; };
+		515EA59B1C156DAA0055C480 /* SectionsViewControllerFriends.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionsViewControllerFriends.h; sourceTree = "<group>"; };
+		515EA59C1C156DAA0055C480 /* SectionsViewControllerFriends.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionsViewControllerFriends.m; sourceTree = "<group>"; };
+		515EA59D1C156DAA0055C480 /* VerifyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerifyViewController.h; sourceTree = "<group>"; };
+		515EA59E1C156DAA0055C480 /* VerifyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerifyViewController.m; sourceTree = "<group>"; };
+		515EA5A71C1573B60055C480 /* button4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button4.png; sourceTree = "<group>"; };
+		515EA5A91C157A220055C480 /* SettingPassWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingPassWordViewController.h; sourceTree = "<group>"; };
+		515EA5AA1C157A220055C480 /* SettingPassWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingPassWordViewController.m; sourceTree = "<group>"; };
+		515EA5AC1C157BBA0055C480 /* SettingPWTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingPWTableViewCell.h; sourceTree = "<group>"; };
+		515EA5AD1C157BBA0055C480 /* SettingPWTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingPWTableViewCell.m; sourceTree = "<group>"; };
 		5163AB5C1BF1843E0040AFDC /* SSPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSPrefixHeader.pch; sourceTree = "<group>"; };
 		5163AB5D1BF18DC20040AFDC /* HSBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSBViewController.h; sourceTree = "<group>"; };
 		5163AB5E1BF18DC20040AFDC /* HSBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSBViewController.m; sourceTree = "<group>"; };
@@ -108,6 +146,10 @@
 		51A0D7711BF051830035269A /* HomeSearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeSearchTableViewCell.m; path = ../HomeSearchTableViewCell.m; sourceTree = "<group>"; };
 		51A0D7731BF087140035269A /* HomePreparationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePreparationViewController.h; sourceTree = "<group>"; };
 		51A0D7741BF087140035269A /* HomePreparationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePreparationViewController.m; sourceTree = "<group>"; };
+		51B196761C169A2200E049E5 /* HuaiTiDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HuaiTiDetailTableViewCell.h; sourceTree = "<group>"; };
+		51B196771C169A2200E049E5 /* HuaiTiDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HuaiTiDetailTableViewCell.m; sourceTree = "<group>"; };
+		51B196791C169D7F00E049E5 /* HuaTiDetialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HuaTiDetialViewController.h; sourceTree = "<group>"; };
+		51B1967A1C169D7F00E049E5 /* HuaTiDetialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HuaTiDetialViewController.m; sourceTree = "<group>"; };
 		51B50B431BFB269E0027BE2A /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
 		51B50B441BFB269E0027BE2A /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 		51B50B491BFC0D150027BE2A /* XQNewFeatureVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQNewFeatureVC.h; sourceTree = "<group>"; };
@@ -118,6 +160,8 @@
 		51B50B4F1BFC0D300027BE2A /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
 		51B50B541BFC0DD70027BE2A /* XQNewFeatureBaseVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQNewFeatureBaseVc.h; sourceTree = "<group>"; };
 		51B50B551BFC0DD70027BE2A /* XQNewFeatureBaseVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQNewFeatureBaseVc.m; sourceTree = "<group>"; };
+		51BD2E061C154C79009C7E72 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		51BD2E071C154C79009C7E72 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		51D2D9BD1BFEB8DD009A6478 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		51D2D9BE1BFEB8DD009A6478 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		51D2D9C01BFEBD9A009A6478 /* GoodDetailTableViewCellB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodDetailTableViewCellB.h; sourceTree = "<group>"; };
@@ -196,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				510AF3471BEDE55F009E3555 /* Main.storyboard */,
+				515EA56A1C1553A30055C480 /* Localizable.strings */,
 				510AF34A1BEDE55F009E3555 /* Assets.xcassets */,
 				51B50B4C1BFC0D300027BE2A /* 1.png */,
 				51B50B4D1BFC0D300027BE2A /* 2.png */,
@@ -346,8 +391,13 @@
 		510AF37D1BEDE5B4009E3555 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				515EA58D1C156DAA0055C480 /* Rigister By SMS */,
 				5181E4EF1BF9CF8B00AEDEAD /* MeViewController.h */,
 				5181E4F01BF9CF8B00AEDEAD /* MeViewController.m */,
+				51BD2E061C154C79009C7E72 /* RegisterViewController.h */,
+				51BD2E071C154C79009C7E72 /* RegisterViewController.m */,
+				515EA5A91C157A220055C480 /* SettingPassWordViewController.h */,
+				515EA5AA1C157A220055C480 /* SettingPassWordViewController.m */,
 				510AF37E1BEDE5B4009E3555 /* TableViewAndCell */,
 			);
 			path = ViewController;
@@ -358,6 +408,8 @@
 			children = (
 				5181E4F21BF9D2C100AEDEAD /* MeTableViewCell.h */,
 				5181E4F31BF9D2C100AEDEAD /* MeTableViewCell.m */,
+				515EA5AC1C157BBA0055C480 /* SettingPWTableViewCell.h */,
+				515EA5AD1C157BBA0055C480 /* SettingPWTableViewCell.m */,
 			);
 			path = TableViewAndCell;
 			sourceTree = "<group>";
@@ -445,6 +497,8 @@
 			children = (
 				5154E75D1BF0928D0030E468 /* TriendViewController.h */,
 				5154E75E1BF0928D0030E468 /* TriendViewController.m */,
+				51B196791C169D7F00E049E5 /* HuaTiDetialViewController.h */,
+				51B1967A1C169D7F00E049E5 /* HuaTiDetialViewController.m */,
 				510AF38D1BEDE5B4009E3555 /* TableViewAndCell */,
 			);
 			path = ViewController;
@@ -455,8 +509,42 @@
 			children = (
 				5181E4EC1BF97DE900AEDEAD /* HuaTiTableViewCell.h */,
 				5181E4ED1BF97DE900AEDEAD /* HuaTiTableViewCell.m */,
+				51B196761C169A2200E049E5 /* HuaiTiDetailTableViewCell.h */,
+				51B196771C169A2200E049E5 /* HuaiTiDetailTableViewCell.m */,
 			);
 			path = TableViewAndCell;
+			sourceTree = "<group>";
+		};
+		515EA58D1C156DAA0055C480 /* Rigister By SMS */ = {
+			isa = PBXGroup;
+			children = (
+				515EA5A71C1573B60055C480 /* button4.png */,
+				515EA58E1C156DAA0055C480 /* CustomCell.h */,
+				515EA58F1C156DAA0055C480 /* CustomCell.m */,
+				515EA5901C156DAA0055C480 /* InvitationViewControllerEx.h */,
+				515EA5911C156DAA0055C480 /* InvitationViewControllerEx.m */,
+				515EA5921C156DAA0055C480 /* Register By Voice Call */,
+				515EA5971C156DAA0055C480 /* RegViewController.h */,
+				515EA5981C156DAA0055C480 /* RegViewController.m */,
+				515EA5991C156DAA0055C480 /* SectionsViewController.h */,
+				515EA59A1C156DAA0055C480 /* SectionsViewController.m */,
+				515EA59B1C156DAA0055C480 /* SectionsViewControllerFriends.h */,
+				515EA59C1C156DAA0055C480 /* SectionsViewControllerFriends.m */,
+				515EA59D1C156DAA0055C480 /* VerifyViewController.h */,
+				515EA59E1C156DAA0055C480 /* VerifyViewController.m */,
+			);
+			path = "Rigister By SMS";
+			sourceTree = "<group>";
+		};
+		515EA5921C156DAA0055C480 /* Register By Voice Call */ = {
+			isa = PBXGroup;
+			children = (
+				515EA5931C156DAA0055C480 /* RegisterByVoiceCallViewController.h */,
+				515EA5941C156DAA0055C480 /* RegisterByVoiceCallViewController.m */,
+				515EA5951C156DAA0055C480 /* SubmitViewController.h */,
+				515EA5961C156DAA0055C480 /* SubmitViewController.m */,
+			);
+			path = "Register By Voice Call";
 			sourceTree = "<group>";
 		};
 		51F1BE1F1BFD70FD004B1681 /* 发布viewController */ = {
@@ -597,6 +685,8 @@
 				51B50B501BFC0D300027BE2A /* 1.png in Resources */,
 				51B50B511BFC0D300027BE2A /* 2.png in Resources */,
 				51B50B521BFC0D300027BE2A /* 3.png in Resources */,
+				515EA5A81C1573B60055C480 /* button4.png in Resources */,
+				515EA56B1C1553A30055C480 /* Localizable.strings in Resources */,
 				510AF34B1BEDE55F009E3555 /* Assets.xcassets in Resources */,
 				510AF3491BEDE55F009E3555 /* Main.storyboard in Resources */,
 			);
@@ -675,27 +765,40 @@
 				510AF38F1BEDE5B4009E3555 /* ViewController.m in Sources */,
 				510AF38E1BEDE5B4009E3555 /* AppDelegate.m in Sources */,
 				51D2D9BF1BFEB8DD009A6478 /* TableViewController.m in Sources */,
+				51BD2E081C154C79009C7E72 /* RegisterViewController.m in Sources */,
 				51B50B4B1BFC0D150027BE2A /* XQNewFeatureVC.m in Sources */,
+				515EA5AB1C157A220055C480 /* SettingPassWordViewController.m in Sources */,
 				51B50B561BFC0DD70027BE2A /* XQNewFeatureBaseVc.m in Sources */,
 				51A0D7751BF087140035269A /* HomePreparationViewController.m in Sources */,
 				517BC0561BFAFE6200262C45 /* HTabelHDView.m in Sources */,
+				515EA5A11C156DAA0055C480 /* RegisterByVoiceCallViewController.m in Sources */,
+				51B1967B1C169D7F00E049E5 /* HuaTiDetialViewController.m in Sources */,
 				510AF3401BEDE55E009E3555 /* main.m in Sources */,
+				515EA5A31C156DAA0055C480 /* RegViewController.m in Sources */,
 				51F2F0121C106182001C25AE /* huaTiJsonModel.m in Sources */,
 				51F1BE221BFD717F004B1681 /* PublishViewController.m in Sources */,
 				5181E4F41BF9D2C100AEDEAD /* MeTableViewCell.m in Sources */,
 				51D2D9C51BFEC246009A6478 /* GoodDetailTableViewCellS.m in Sources */,
 				510AF3921BEDED2D009E3555 /* HomeViewController.m in Sources */,
+				515EA5A61C156DAA0055C480 /* VerifyViewController.m in Sources */,
 				5113D4661C0E91B4006D1E24 /* homeManager.m in Sources */,
 				51A0D7721BF051830035269A /* HomeSearchTableViewCell.m in Sources */,
 				5154E75F1BF0928D0030E468 /* TriendViewController.m in Sources */,
+				515EA5A01C156DAA0055C480 /* InvitationViewControllerEx.m in Sources */,
+				515EA5AE1C157BBA0055C480 /* SettingPWTableViewCell.m in Sources */,
+				51B196781C169A2200E049E5 /* HuaiTiDetailTableViewCell.m in Sources */,
+				515EA59F1C156DAA0055C480 /* CustomCell.m in Sources */,
 				517BC04E1BFAF3C900262C45 /* HomeTableViewCell.m in Sources */,
 				51A0D76C1BF0438A0035269A /* HomeSearchViewController.m in Sources */,
+				515EA5A21C156DAA0055C480 /* SubmitViewController.m in Sources */,
 				51B50B451BFB269E0027BE2A /* TabBarController.m in Sources */,
 				51F1BE251BFDCA8E004B1681 /* GoodDetailViewController.m in Sources */,
 				51D2D9C21BFEBD9A009A6478 /* GoodDetailTableViewCellB.m in Sources */,
 				5181E4F11BF9CF8B00AEDEAD /* MeViewController.m in Sources */,
+				515EA5A41C156DAA0055C480 /* SectionsViewController.m in Sources */,
 				5181E4EE1BF97DE900AEDEAD /* HuaTiTableViewCell.m in Sources */,
 				51588D0E1C0BF1F700236C65 /* HomeModel.m in Sources */,
+				515EA5A51C156DAA0055C480 /* SectionsViewControllerFriends.m in Sources */,
 				5113D4631C0E8554006D1E24 /* HomeAPI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -746,6 +849,16 @@
 				510AF34D1BEDE55F009E3555 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		515EA56A1C1553A30055C480 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				515EA5681C1553A30055C480 /* zh-Hans */,
+				515EA5691C1553A30055C480 /* en */,
+			);
+			name = Localizable.strings;
+			path = ../../../Downloads/SMSSDK1.2.0/SMS_SDKDemo;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
