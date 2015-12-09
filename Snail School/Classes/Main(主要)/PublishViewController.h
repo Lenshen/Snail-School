@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface PublishViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *priceTextField;
+@property (weak, nonatomic) IBOutlet UITextField *originalPrice;
+@property (weak, nonatomic) IBOutlet UIView *priceView;
 
 @end

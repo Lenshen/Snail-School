@@ -9,6 +9,7 @@
 #import "HuaTiDetialViewController.h"
 #import "HuaiTiDetailTableViewCell.h"
 @interface HuaTiDetialViewController ()<UITableViewDataSource,UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UIView *tableHeaderView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

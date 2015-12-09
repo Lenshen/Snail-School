@@ -43,6 +43,7 @@
 		51A0D7751BF087140035269A /* HomePreparationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A0D7741BF087140035269A /* HomePreparationViewController.m */; settings = {ASSET_TAGS = (); }; };
 		51B196781C169A2200E049E5 /* HuaiTiDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51B196771C169A2200E049E5 /* HuaiTiDetailTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		51B1967B1C169D7F00E049E5 /* HuaTiDetialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51B1967A1C169D7F00E049E5 /* HuaTiDetialViewController.m */; settings = {ASSET_TAGS = (); }; };
+		51B1967E1C1701F300E049E5 /* UIView+LQXkeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 51B1967D1C1701F300E049E5 /* UIView+LQXkeyboard.m */; settings = {ASSET_TAGS = (); }; };
 		51B50B451BFB269E0027BE2A /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51B50B441BFB269E0027BE2A /* TabBarController.m */; settings = {ASSET_TAGS = (); }; };
 		51B50B4B1BFC0D150027BE2A /* XQNewFeatureVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 51B50B4A1BFC0D150027BE2A /* XQNewFeatureVC.m */; settings = {ASSET_TAGS = (); }; };
 		51B50B501BFC0D300027BE2A /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 51B50B4C1BFC0D300027BE2A /* 1.png */; settings = {ASSET_TAGS = (); }; };
@@ -150,6 +151,8 @@
 		51B196771C169A2200E049E5 /* HuaiTiDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HuaiTiDetailTableViewCell.m; sourceTree = "<group>"; };
 		51B196791C169D7F00E049E5 /* HuaTiDetialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HuaTiDetialViewController.h; sourceTree = "<group>"; };
 		51B1967A1C169D7F00E049E5 /* HuaTiDetialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HuaTiDetialViewController.m; sourceTree = "<group>"; };
+		51B1967C1C1701F300E049E5 /* UIView+LQXkeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LQXkeyboard.h"; sourceTree = "<group>"; };
+		51B1967D1C1701F300E049E5 /* UIView+LQXkeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LQXkeyboard.m"; sourceTree = "<group>"; };
 		51B50B431BFB269E0027BE2A /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
 		51B50B441BFB269E0027BE2A /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 		51B50B491BFC0D150027BE2A /* XQNewFeatureVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQNewFeatureVC.h; sourceTree = "<group>"; };
@@ -456,6 +459,8 @@
 		510AF3841BEDE5B4009E3555 /* Other(其他) */ = {
 			isa = PBXGroup;
 			children = (
+				51B1967C1C1701F300E049E5 /* UIView+LQXkeyboard.h */,
+				51B1967D1C1701F300E049E5 /* UIView+LQXkeyboard.m */,
 				510AF3851BEDE5B4009E3555 /* AppDelegate.h */,
 				510AF3861BEDE5B4009E3555 /* AppDelegate.m */,
 				510AF3871BEDE5B4009E3555 /* ViewController.h */,
@@ -778,6 +783,7 @@
 				51F2F0121C106182001C25AE /* huaTiJsonModel.m in Sources */,
 				51F1BE221BFD717F004B1681 /* PublishViewController.m in Sources */,
 				5181E4F41BF9D2C100AEDEAD /* MeTableViewCell.m in Sources */,
+				51B1967E1C1701F300E049E5 /* UIView+LQXkeyboard.m in Sources */,
 				51D2D9C51BFEC246009A6478 /* GoodDetailTableViewCellS.m in Sources */,
 				510AF3921BEDED2D009E3555 /* HomeViewController.m in Sources */,
 				515EA5A61C156DAA0055C480 /* VerifyViewController.m in Sources */,

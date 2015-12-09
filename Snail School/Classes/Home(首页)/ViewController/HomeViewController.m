@@ -212,6 +212,12 @@
 
 -(void)selectedSegmentIndex:(UISegmentedControl *)sender
 {
+    if (sender == self.SegmentHideController) {
+        self.segmentController.selectedSegmentIndex = sender.selectedSegmentIndex;
+    }else
+    {
+        self.SegmentHideController.selectedSegmentIndex = sender.selectedSegmentIndex;
+    }
     int selectedSegmentIndex = (int)sender.selectedSegmentIndex;
     
     NSLog(@"Segment %d selected\n", selectedSegmentIndex);
