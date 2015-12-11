@@ -17,10 +17,11 @@
 #import "homeManager.h"
 #import "GoodDetailViewController.h"
 #import "HomeTableViewCell.h"
+#import "HomeCollectionViewCell.h"
 #define Kwidth [UIScreen mainScreen].bounds.size.width
 #define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
 #define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
-@interface HomeViewController ()<UITabBarControllerDelegate,UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
+@interface HomeViewController ()<UITabBarControllerDelegate,UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentController;
 @property (weak, nonatomic) HomeTableViewCell *cell;
@@ -33,6 +34,7 @@
 @property (strong, nonatomic)NSArray *imgArray;
 @property (strong, nonatomic)NSArray *json;
 @property (strong, nonatomic)homeManager *homeManger;
+
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activtyView;
 @property (weak, nonatomic)  UIScrollView *cellScrollView;
 @property (strong, nonatomic) UIImageView *cellImageView;
@@ -72,7 +74,8 @@
         self.jsonModel = homeData[0];
         [self.tableView reloadData];
 
-       
+        self.segmentController.selectedSegmentIndex = 0;
+
         [self.activtyView stopAnimating];
         [self.activtyView setHidesWhenStopped:YES];
     } fail:^{
@@ -80,6 +83,7 @@
         [self.activtyView setHidesWhenStopped:YES];
 
     }];
+    
   
 }
 -(void)readData
@@ -261,10 +265,7 @@
 {
     return 1;
 }
-//-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-//{
-//    return <#expression#>
-//}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 100;
@@ -295,6 +296,8 @@
     _cell.formLabel.text = formStr;
     _cell.goodDesLabel.text = self.jsonModel.good_desc;
     _cell.goodImageScrollView.contentSize = CGSizeMake(_cell.goodImageScrollView.frame.size.width*self.jsonModel.img.count, _cell.goodImageScrollView.frame.size.height);
+    _cell.HomeCellCollection.delegate = self;
+    _cell.HomeCellCollection.dataSource = self;
     if (self.jsonModel.trader_isAuth == 0) {
         _cell.vaildateImage.image = [UIImage imageNamed:@"已验证"];
     }else
@@ -308,42 +311,42 @@
     {
         _cell.sexImage.image = [UIImage imageNamed:@"男生"];
     }
-    if (self.jsonModel.img) {
-        [self cellScrollviewAddImage];
-    }
+    [_cell.HomeCellCollection reloadData];
     
     return _cell;
 
     
+    
 }
 
--(void)cellScrollviewAddImage
+
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-   
-            NSMutableArray *urlArray = [[NSMutableArray alloc]init];
-            UIImageView * image = [[UIImageView alloc]init];
-    
-            for(int i=0; i< self.jsonModel.img.count; i++)
-            {
-    
-                self.cellImageView  = [[UIImageView alloc] initWithFrame:CGRectMake(_cell.goodImageScrollView.frame.size.width*i,0,_cell.goodImageScrollView.frame.size.width,200)];
-    
-                [urlArray addObject:self.jsonModel.img[i]];
-                NSString *str = [NSString stringWithFormat:@"http://139.196.33.40/%@",self.jsonModel.img[i]];
-                [image sd_setImageWithURL:[NSURL URLWithString:str]completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                    self.cellImageView.image =image;
-                    [_cell.goodImageScrollView addSubview:self.cellImageView];
-
-    
-                }];
-            }
-    
-  
-    
-    
-
-
+    return self.jsonModel.img.count;
 }
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    HomeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HomeCollectionViewCell" forIndexPath:indexPath];
+    NSString *str = [NSString stringWithFormat:@"http://139.196.33.40/%@",self.jsonModel.img[indexPath.row]];
+
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        
+        
+        NSURL *url = [NSURL URLWithString:str];
+        
+        NSData *data = [NSData dataWithContentsOfURL:url];
+        UIImage *image = [UIImage imageWithData:data];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            cell.imageCell.image = image;
+        });
+        
+    });
+    
+    return cell;
+    
+}
+
 #pragma mark 时间转化
 
 -(NSString *) compareCurrentTime:(NSString *) compareDate
@@ -452,14 +455,5 @@
 
 
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -8,11 +8,18 @@
 
 #import "PublishViewController.h"
 #import "UIView+LQXkeyboard.h"
+#import "ZLPhotoPickerViewController.h"
+#import "ZLCameraViewController.h"
+#import "ZLCamera.h"
 #define ScreenWidth self.view.bounds.size.width
 #define ScreenHeight self.view.bounds.size.height
 
-@interface PublishViewController ()<UITextFieldDelegate>
+@interface PublishViewController ()<UITextFieldDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,ZLPhotoPickerViewControllerDelegate,UICollectionViewDataSource,UICollectionViewDelegate>
+@property (weak, nonatomic) IBOutlet UICollectionView *pbCollectionView;
 @property (weak, nonatomic) IBOutlet UIButton *addImageButton;
+@property (weak, nonatomic) NSArray *imagesArray;
+@property (strong, nonatomic) NSMutableArray *imagesMutableArray;
+
 @property (assign, nonatomic) CGRect keyboardField;
 @property (assign, nonatomic)int i;
 
@@ -28,12 +35,31 @@
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
     self.priceTextField.delegate = self;
     self.originalPrice.delegate =self;
-   
+    self.pbCollectionView.delegate =self;
+    self.pbCollectionView.dataSource =self;
     
     
 
     
 }
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+
+    return self.imagesArray.count;
+
+}
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    PBCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PBCollectionCell" forIndexPath:indexPath];
+    NSLog(@"%ld",indexPath.row);
+    ZLCamera *camera = self.imagesArray[indexPath.row];
+
+   
+
+    cell.GoodImage.image = camera.photoImage;
+    return cell;
+}
+
 -(void)keyboardWillChangeFrame:(NSNotification *)notification
 {
     NSDictionary *useInfo = notification.userInfo;
@@ -58,24 +84,93 @@
 }
 - (IBAction)addImage:(UIButton *)sender {
     self.i += 10;
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"打开照相机",@"从手机相册获取", nil];
+    actionSheet.tag = 1;
+    [actionSheet showInView:self.view];
 
-    self.addImageButton.frame = CGRectMake(self.addImageButton.frame.origin.x+self.i, 207, self.addImageButton.frame.size.width, self.addImageButton.frame.size.height);
-    
-    if (self.addImageButton.frame.origin.x >= 320) {
-        self.addImageButton.frame = CGRectMake(20, 207+100, self.addImageButton.frame.size.width, self.addImageButton.frame.size.height);
-        sender.enabled = NO;
-        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:nil
-                                                        message:@"上传照片不能超过4张哦！"
-                                                       delegate:self
-                                              cancelButtonTitle:@"确定"
-                                              otherButtonTitles:nil, nil];
-        [alert show];
 
+}
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    actionSheet.tag = 1;
+    if (buttonIndex == actionSheet.cancelButtonIndex) {
+        NSLog(@"cancel");
     }
+    switch (buttonIndex) {
+        case 0:
+            [self takePhoto];
+            break;
+            case 1:
+            [self localPhoto];
+            break;
+    
+      
+    }
+}
+-(void)takePhoto
+{
+//    UIImagePickerController *picker = [[UIImagePickerController alloc]init];
+//    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+//    picker.delegate = self;
+//    picker.allowsEditing = YES;
+//    [self presentViewController:picker animated:YES completion:nil];
+    ZLCameraViewController *cameraVc = [[ZLCameraViewController alloc] init];
+    __weak typeof(self) weakSelf = self;
+    cameraVc.callback =  ^(NSArray *assets)
+    {
+        weakSelf.imagesArray =  assets;
+        NSLog(@"assets %@",weakSelf.imagesArray);
+        
+        [self.pbCollectionView reloadData];
+        
+        
+    };
+    [cameraVc showPickerVc:self];
+
+   
+
     
 
 }
-
+-(void)localPhoto
+{
+    ZLPhotoPickerViewController *pickerVc = [[ZLPhotoPickerViewController alloc] init];
+    // 默认显示相册里面的内容SavePhotos
+    pickerVc.status = PickerViewShowStatusCameraRoll;
+    pickerVc.delegate = self;
+    [pickerVc showPickerVc:self];
+//    UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypeCamera;
+//    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+//        UIImagePickerController *prick = [[UIImagePickerController alloc]init];
+//        prick.delegate = self;
+//        prick.sourceType = sourceType;
+//        [self presentViewController:prick animated:YES completion:nil];
+//    }
+}
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
+{
+    NSString *type = [info objectForKey:UIImagePickerControllerMediaType];
+    if ([type isEqualToString:@"public.image"]) {
+        UIImage *image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+        NSData *data;
+        if (UIImagePNGRepresentation(image)) {
+            data = UIImageJPEGRepresentation(image, 1.0);
+        }else
+        {
+            data = UIImagePNGRepresentation(image);
+        }
+        NSString *DocumnetsPath = [NSHomeDirectory()stringByAppendingPathComponent:@"Documents"];
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        [fileManager createDirectoryAtPath:DocumnetsPath withIntermediateDirectories:YES attributes:nil error:nil];
+        [fileManager createFileAtPath:[DocumnetsPath stringByAppendingString:@"/image.png"]  contents:data attributes:nil];
+        NSString *filePath = [[NSString alloc]initWithFormat:@"%@%@",DocumnetsPath,@"/image.png"];
+        [picker dismissViewControllerAnimated:YES completion:nil];
+        UIImageView *smallimage = [[UIImageView alloc]initWithFrame:CGRectMake(20, 210, 54, 61)];
+        smallimage.image = image;
+        [self.view addSubview:smallimage];
+        
+    }
+}
 - (IBAction)black:(id)sender
 {
     [self dismissViewControllerAnimated:YES completion:nil];

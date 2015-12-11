@@ -26,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *goodComment;
 @property (weak, nonatomic) IBOutlet UILabel *goodPrice;
 @property (weak, nonatomic) IBOutlet UILabel *goodPrimePrice;
+@property (weak, nonatomic) IBOutlet UICollectionView *HomeCellCollection;
 
 
 @end

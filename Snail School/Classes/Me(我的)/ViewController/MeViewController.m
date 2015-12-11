@@ -8,6 +8,8 @@
 
 #import "MeViewController.h"
 #import "MeTableViewCell.h"
+#import "MySecondHandViewController.h"
+#import "MyEvaluateViewController.h"
 
 @interface MeViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
@@ -24,6 +26,16 @@
     self.tableview.scrollEnabled = NO;
 
 }
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+    //一些navigationController的属性
+    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleDone target:nil action:nil];
+    self.navigationItem.backBarButtonItem = barButtonItem;
+    
+    
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -79,6 +91,27 @@
         return 1000;
     }
     return 20;
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0 &&indexPath.row == 0) {
+       
+    }else if (indexPath.section == 1 &&indexPath.row == 0) {
+        
+        MySecondHandViewController *mySecondHand =[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"MySecondHand"];
+        [self.navigationController pushViewController:mySecondHand animated:YES];
+        
+    }else if (indexPath.section == 1 &&indexPath.row == 1) {
+        
+    }else if (indexPath.section == 1 &&indexPath.row == 2) {
+        MyEvaluateViewController *myEvaluate = [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"MyEvaluateViewController"];
+        [self.navigationController pushViewController:myEvaluate animated:YES];
+
+    }else
+    {
+       
+        
+    }
 }
 
 /*

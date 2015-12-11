@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PBCollectionCell.h"
 
 @interface PublishViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *priceTextField;

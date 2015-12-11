@@ -21,8 +21,23 @@
     // Do any additional setup after loading the view.
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    
+    [self setNavigationParameter];
 }
+-(void)setNavigationParameter
+{
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
+    
+    UILabel *customLab = [[UILabel alloc] initWithFrame:CGRectZero];
+    [customLab setTextColor:[UIColor whiteColor]];
+    customLab.textAlignment = NSTextAlignmentCenter;
+    
+    [customLab setText:@"商品详情"];
+    customLab.font = [UIFont boldSystemFontOfSize:20];
+    self.navigationItem.titleView = customLab;
+    [customLab sizeToFit];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 4;

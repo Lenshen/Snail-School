@@ -34,12 +34,10 @@
 {
     self.navigationController.navigationBar.hidden = NO;
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    self.navigationController.navigationItem.backBarButtonItem.title = @"ss";
-    
+     
     UILabel *customLab = [[UILabel alloc] initWithFrame:CGRectZero];
     [customLab setTextColor:[UIColor whiteColor]];
     customLab.textAlignment = NSTextAlignmentCenter;
-    
     [customLab setText:@"商品详情"];
     customLab.font = [UIFont boldSystemFontOfSize:20];
     self.navigationItem.titleView = customLab;
@@ -118,6 +116,10 @@
     
    
 
+}
+-(void)isAuth:(UIImage *)cellImage
+{
+    
 }
 
     
